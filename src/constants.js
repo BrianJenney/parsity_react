@@ -4,4 +4,9 @@ export const CONSTANTS = {
     SAVE_CONTACT: 'SAVE CONTACT',
     SAVE_CHANGES: 'SAVE CHANGES',
     ADD_NEW_CONTACT: 'ADD NEW CONTACT',
+    FORM_IMAGE_URL: 'Image URL',
+    FORM_NAME: 'Name',
+    FORM_EMAIL: 'Email',
+    FORM_PHONE_NUMBER: 'Phone Number',
+    FORM_SUBMIT: 'Submit',
 };
