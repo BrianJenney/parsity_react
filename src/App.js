@@ -13,7 +13,7 @@ function App() {
             id: generateId(),
             name: 'Albert Einstein',
             image_url:
-                'https://en.wikipedia.org/wiki/Albert_Einstein#/media/File:Einstein_1921_by_F_Schmutzer_-_restoration.jpg',
+                'https://cdn.pixabay.com/photo/2016/12/27/06/38/albert-einstein-1933340_1280.jpg',
             email: 'aeinstein@example.com',
             phone_number: '15555555555',
         },

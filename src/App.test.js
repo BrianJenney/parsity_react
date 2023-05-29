@@ -8,6 +8,17 @@ describe('App', () => {
             render(<App />);
             const linkElement = screen.getByText(/All Contacts/i);
             expect(linkElement).toBeInTheDocument();
+
+            // filter by name
+            const searchInput = screen.getByPlaceholderText('Search Contacts');
+            fireEvent.change(searchInput, { target: { value: 'Albert' } });
+            expect(screen.getByText('Albert Einstein')).toBeInTheDocument();
+
+            // filter by name that doesn't exist
+            fireEvent.change(searchInput, { target: { value: 'Jane' } });
+            expect(
+                screen.queryByText('Albert Einstein'),
+            ).not.toBeInTheDocument();
         });
 
         it('should add a contact and filter contacts by name', () => {
@@ -70,12 +81,9 @@ describe('App', () => {
             render(<App />);
 
             // click on the edit button
-            const userLink = screen.getByText(/Albert Einstein/i);
+            const userLink = screen.getByText(/Edit/i);
 
             fireEvent.click(userLink);
-
-            const editButton = screen.getByText(/Edit/i);
-            fireEvent.click(editButton);
 
             // it disables the save button if the form is invalid
             const saveChanges = screen.getByText(CONSTANTS.SAVE_CHANGES);

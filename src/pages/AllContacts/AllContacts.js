@@ -60,6 +60,11 @@ function AllContacts({ contacts }) {
                             </td>
                             <td>{contact.email}</td>
                             <td>{contact.phone_number}</td>
+                            <td>
+                                <Link to={`/contacts/${contact.id}/edit`}>
+                                    Edit
+                                </Link>
+                            </td>
                         </tr>
                     ))}
                 </tbody>

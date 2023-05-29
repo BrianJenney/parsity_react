@@ -10,13 +10,19 @@ function ContactInfo({ contacts }) {
     if (!contact) return <h1>Contact not found</h1>;
 
     return (
-        <div>
+        <div className="container-md">
             <h1>Contact Info</h1>
+            <Link to="/">Back</Link>
             <h2>{contact.name}</h2>
-            <img src={contact.image_url} alt={contact.name} />
+            <img
+                className="rounded"
+                width={500}
+                height={500}
+                src={contact.image_url}
+                alt={contact.name}
+            />
             <p>{contact.email}</p>
             <p>{contact.phone_number}</p>
-            <Link to={`/contacts/${contact.id}/edit`}>Edit</Link>
         </div>
     );
 }
