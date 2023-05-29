@@ -1,3 +1,5 @@
+// You can use this file to add all your constants
+
 export const CONSTANTS = {
     ADD_CONTACT: 'ADD CONTACT',
     EDIT_CONTACT: 'EDIT CONTACT',
