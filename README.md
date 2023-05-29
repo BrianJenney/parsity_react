@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Rolodex App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+Welcome to the Rolodex App! This app allows you to manage and filter your contacts. Follow the instructions below to set up and start using the app.
 
-In the project directory, you can run:
+## Installation
 
-### `npm start`
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
+3. Install the dependencies by running the following command:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```shell
+npm install
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+To launch the Rolodex App, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Run the following command:
 
-### `npm run build`
+```shell
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Open your browser and visit http://localhost:3000 to access the app.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## Add New Contact
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+To add a new contact:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+On the home page, click the "Add New Contact" button.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Fill out the contact form with the required information, including the name, email, image URL, and phone number.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Click the "Add Contact" button to save the contact.
 
-## Learn More
+## Filter Contacts
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To filter contacts by name:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+On the home page, enter the name you want to filter by in the search input field.
 
-### Code Splitting
+The contacts list will be filtered dynamically based on the entered name.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Contacts matching the search query will be displayed, while non-matching contacts will be hidden.
 
-### Analyzing the Bundle Size
+## Edit Contact
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+To edit an existing contact:
 
-### Making a Progressive Web App
+On the home page, find the contact you want to edit in the contacts table.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Click on the contact's name to navigate to the edit page.
 
-### Advanced Configuration
+On the edit page, modify the contact's details as desired.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Click the "Save Changes" button to save the updated contact information.
 
-### Deployment
+## Testing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+The Rolodex App comes with a test suite to ensure its functionality. To run the tests, use the following command:
 
-### `npm run build` fails to minify
+```shell
+npm test
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The tests cover various scenarios, including rendering the add new contact button, rendering the all contacts table, adding a contact, filtering contacts by name, and editing a contact.
+
+**You do NOT need to create the app to perfectly make the test pass** and if you decide to add some of the extensions then they may not work. These tests make some assumptions and will require you to follow certain naming conventions that are in the `constants.js` file.
+
+For example, if you name the `Add New Contact` button to `Add Another Contact` you will need to update the tests in order for them to pass by changing
+
+```js
+const addButton = screen.getByText(CONSTANTS.ADD_NEW_CONTACT);
+```
+
+to
+
+```js
+const addButton = screen.getByText('Add Another Contact');
+```
+
+Make sure to implement the necessary components and functionality to pass the provided tests associated with the app.
+
+Good luck!
